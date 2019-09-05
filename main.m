@@ -1,10 +1,10 @@
 clear
 tic
-A=load('z12.txt');%
-n=size(A,1);%
+dir='/home/qiusb/Documents/MATLAB/SiGeH_190806/files/';
+A=load([dir,'Ge14.txt']);
 B=neighbor(A);%create distance matrix
 Code=unique(findC(B),'rows');
- save z12_table.txt Code -ascii
+save([dir,'table_Ge14.txt'],'Code','-ascii')
 toc
 
 
