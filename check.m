@@ -1,9 +1,9 @@
-function a=check(b,B,C)%¼ì²éÐÂÔö¼ÓµÄÒ»¸öÔ­×ÓºÍÆäÓàÔ­×ÓµÄÎ»ÖÃ¹ØÏµ
+function a=check(atom_id,B,DM)%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Ò»ï¿½ï¿½Ô­ï¿½Óºï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½Óµï¿½Î»ï¿½Ã¹ï¿½Ïµ
 a=0;
-D=C(1:b-1,b);
+D=DM(atom_id,atom_id(end));
 E=[];
-for ii=1:b-1
-       E(ii,1)=C(B(1,ii),B(1,b));
+for ii=1:size(B,2)
+       E(ii,1)=DM(B(1,ii),B(1,end));
 end
 if D==E
     a=1;

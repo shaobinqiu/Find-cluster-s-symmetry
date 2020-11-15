@@ -1,10 +1,10 @@
 clear
 tic
-dir='/home/qiusb/Documents/MATLAB/SiGeH_190806/files/';
-A=load([dir,'Ge14.txt']);
-B=neighbor(A);%create distance matrix
-Code=unique(findC(B),'rows');
-save([dir,'table_Ge14.txt'],'Code','-ascii')
+cell=import_poscar( 'POSCAR_H2O.txt' );
+coords=cell.coords*cell.lattice;
+DM=distanceM(coords,cell.atomcount);%create distance matrix
+Code=unique(findC(DM),'rows');
+%save([dir,'table_Ge221D.txt'],'Code','-ascii')
 toc
 
 
